@@ -1,10 +1,13 @@
-import CliApp from 'cli/main'
-import GuiApp from 'gui/main'
+// import CliApp from 'cli/main'
+// import GuiApp from 'gui/main'
 
 class App {
-	static App() {
-		for (let argument of process.argv) {
-			console.info('found argument: ', argument)
+	static run() {
+		console.log('running now')
+		for (const argument of process.argv) {
+			console.log('found argument: ', argument)
 		}
 	}
 }
+
+export default App

@@ -1,3 +1,4 @@
-import App from 'src/main'
+import App from './lib/main'
 
+console.log('test')
 App.run()
