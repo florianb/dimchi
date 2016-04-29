@@ -1,13 +1,13 @@
 {
   "name": "dimchi",
-  "version": "0.1.0",
+  "version": "0.0.1-0",
   "description": "The Dimension Data Managed Cloud, kindly served as spicy app.",
   "main": "main.js",
   "config": {
-	  "loglevel": "error"
+    "loglevel": "error"
   },
   "scripts": {
-	 "preversion": "sh ./scripts/test.sh",
+    "preversion": "sh ./scripts/test.sh",
     "check": "sh ./scripts/check.sh",
     "build": "sh ./scripts/build.sh",
     "test": "sh ./scripts/test.sh",
