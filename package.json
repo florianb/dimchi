@@ -1,6 +1,6 @@
 {
   "name": "dimchi",
-  "version": "0.0.1-0",
+  "version": "0.0.1-1",
   "description": "The Dimension Data Managed Cloud, kindly served as spicy app.",
   "main": "main.js",
   "config": {
