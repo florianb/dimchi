@@ -1,20 +1,19 @@
-import meow from 'meow'
+const packageJson = require('../package.json')
 
-// import CliApp from 'cli/main'
-// import GuiApp from 'gui/main'
+import CliApp from './cli/main'
+import GuiApp from './gui/main'
 
 class App {
 	static run() {
-		const commandName = 'dimchi'
-		const cli = meow(`
-			Usage:
-				$ ${commandName} <options>
-`)
-		cli.showHelp()
-		console.log('running now')
-		for (const argument of process.argv) {
-			console.log('found argument: ', argument)
+		let app = null
+
+		if (process.argv.includes('--cli')) {
+			app = new CliApp(packageJson)
+		} else {
+			app = new GuiApp(packageJson)
 		}
+
+		process.exit(app.run())
 	}
 }
 
