@@ -1,9 +1,13 @@
 {
   "name": "dimchi",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The Dimension Data Managed Cloud, kindly served as spicy app.",
   "main": "main.js",
+  "config": {
+	  "loglevel": "error"
+  },
   "scripts": {
+	 "preversion": "sh ./scripts/test.sh",
     "check": "sh ./scripts/check.sh",
     "build": "sh ./scripts/build.sh",
     "test": "sh ./scripts/test.sh",
@@ -35,7 +39,10 @@
     "xo": "^0.14.0"
   },
   "dependencies": {
-    "electron-prebuilt": "^0.37.7"
+    "chalk": "^1.1.3",
+    "electron-prebuilt": "^0.37.7",
+    "meow": "^3.7.0",
+    "ora": "^0.2.1"
   },
   "babel": {
     "presets": [
@@ -62,8 +69,8 @@
     "esnext": true,
     "semicolon": false,
     "ignores": [
-       "lib/**/*",
-       "*.js"
+      "lib/**/*",
+      "*.js"
     ]
   }
 }
