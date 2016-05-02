@@ -1,3 +1,4 @@
 import App from './lib/main'
 
-App.run()
+const app = new App()
+app.run()
