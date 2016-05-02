@@ -13,7 +13,6 @@
     "test": "sh ./scripts/test.sh",
     "update": "sh ./scripts/update.sh",
     "watch": "sh ./scripts/watch.sh",
-    "start": "electron . &",
     "reset": "rm -rf node_modules; npm install"
   },
   "repository": {
