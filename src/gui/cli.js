@@ -1,9 +1,20 @@
-// this is the command-line-interface of the gui-app
+import meow from 'meow'
 
 class Cli {
-	constructor(packageJson) {
-		console.dir(packageJson)
-		this.hasPassed = true
+	constructor() {
+		this.cli = meow(`
+	Options:
+
+	Usage:
+`)
+	}
+
+	run() {
+		if (this.cli.flags instanceof Array &&
+			this.cli.flags.includes('help')
+		) {
+			this.cli.showHelp(0)
+		}
 	}
 }
 

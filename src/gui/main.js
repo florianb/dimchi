@@ -1,22 +1,22 @@
+import app from 'app'
+
 import Cli from './cli'
+// import Dimchi from './dimchi'
 
 class GuiApp {
-	constructor(packageJson) {
-		this.cli = new Cli(packageJson)
+	constructor() {
+		this.cli = new Cli()
 	}
 
 	run() {
-		if (this.cli.hasPassed === true) {
-			return this.launchElectron()
-		}
+		this.cli.run()
 
-		return 0
+		console.info(process.versions.electron)
+
+		app.on('ready', () => console.info('were ready'))
+		app.on('will-finish-launching', () => console.info('will finish soon..'))
+		// this.dimchi = new Dimchi(this.cli)
 	}
-
-	launchElectron() {
-		console.info('launching Electron')
-	}
-
 }
 
 export default GuiApp

@@ -1,18 +1,16 @@
 import meow from 'meow'
 
 class CliApp {
-	constructor(currentPackageJson) {
-		this.packageJson = currentPackageJson
+	constructor() {
 		this.cli = meow(`
-			${currentPackageJson.name} - version ${currentPackageJson.version}
-			Usage:
-				$ ${currentPackageJson.name} <options>
+	Options:
+
+	Usage:
 `)
 	}
 
 	run() {
-		console.info(this.cli.help)
-		return 0
+		this.cli.showHelp(0)
 	}
 }
 
