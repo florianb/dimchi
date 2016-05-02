@@ -13,7 +13,8 @@
     "test": "sh ./scripts/test.sh",
     "update": "sh ./scripts/update.sh",
     "watch": "sh ./scripts/watch.sh",
-    "reset": "rm -rf node_modules; npm install"
+    "reset": "rm -rf node_modules; npm install",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,7 @@
   "dependencies": {
     "babel-preset-react": "^6.5.0",
     "chalk": "^1.1.3",
-    "electron-prebuilt": "^0.37.7",
+    "electron-prebuilt": "^0.37.8",
     "meow": "^3.7.0",
     "ora": "^0.2.1",
     "react": "^15.0.2",
