@@ -13,7 +13,7 @@ class App {
 			app = new GuiApp(packageJson)
 		}
 
-		process.exit(app.run())
+		process.exit(app.run() || 0)
 	}
 }
 
