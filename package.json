@@ -2,7 +2,7 @@
   "name": "dimchi",
   "version": "0.0.1-1",
   "description": "The Dimension Data Managed Cloud, kindly served as spicy app.",
-  "main": "main.js",
+  "main": "lib/bootstrap.js",
   "config": {
     "loglevel": "error"
   },
@@ -14,7 +14,8 @@
     "update": "sh ./scripts/update.sh",
     "watch": "sh ./scripts/watch.sh",
     "reset": "rm -rf node_modules; npm install",
-    "start": "electron ."
+    "start": "electron .",
+    "repl": "node"
   },
   "repository": {
     "type": "git",
@@ -42,7 +43,7 @@
     "babel-preset-react": "^6.5.0",
     "chalk": "^1.1.3",
     "electron-prebuilt": "^0.37.8",
-    "meow": "^3.7.0",
+    "minimist": "^1.2.0",
     "ora": "^0.2.1",
     "react": "^15.0.2",
     "react-redux": "^4.4.5",

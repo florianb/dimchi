@@ -1,7 +1,5 @@
-import app from 'app'
-
 import Cli from './cli'
-// import Dimchi from './dimchi'
+import Dimchi from './dimchi'
 
 class GuiApp {
 	constructor() {
@@ -11,11 +9,10 @@ class GuiApp {
 	run() {
 		this.cli.run()
 
+		console.info(process.version)
 		console.info(process.versions.electron)
 
-		app.on('ready', () => console.info('were ready'))
-		app.on('will-finish-launching', () => console.info('will finish soon..'))
-		// this.dimchi = new Dimchi(this.cli)
+		this.dimchi = new Dimchi(this.cli)
 	}
 }
 

@@ -1,42 +1,41 @@
-// import fs from 'fs'
+import path from 'path'
+import electron from 'electron'
 
-import app from 'app'
-
-// const BrowserWindow = electron.BrowserWindow
+const BrowserWindow = electron.BrowserWindow
 
 class Dimchi {
 	constructor(cli) {
 		this.cli = cli
-		// this.windows = []
+		this.windows = []
 		this.subscribeCallbacks()
-		console.log('constructed dimchi.')
 	}
 
 	dimchiIsReady() {
-		console.info('dimchi ready.')
-		// this.createWindow('index.html')
+		this.createWindow('gui/index.html')
 	}
-/*
+
 	allWindowsClosed() {
 		if (process.platform !== 'darwin') {
 			electron.app.quit()
 		}
 	}
-*/
-	subscribeCallbacks() {
-		app.on('ready', () => console.log('ready..'))
-		// electron.app.on('window-all-closed', this.allWindowsClosed)
 
-		console.info('subscribed dimchi to electron.')
+	subscribeCallbacks() {
+		electron.app.on('ready', () => {
+			this.createWindow('index.html')
+		})
+		electron.app.on('window-all-closed', this.allWindowsClosed)
 	}
-/*
-	createWindow(file) {
+
+	createWindow(target) {
 		const newWindow = new BrowserWindow({
 			width: 800,
 			height: 600
 		})
 
-		newWindow.loadURL(`file://${fs.join(__dirname, file)}`)
+		newWindow.loadURL(
+			`file://${path.join(__dirname, target)}`
+		)
 		if (this.cli.flags.dev === true) {
 			newWindow.webContents.openDevTools()
 		}
@@ -56,7 +55,7 @@ class Dimchi {
 			this.windows.splice(windowIndex, 1)
 		}
 		console.info('destroyed window.')
-	} */
+	}
 }
 
 export default Dimchi
